@@ -1,0 +1,52 @@
+{
+  "appId": "com.lossless.videoeditor",
+  "productName": "Lossless Studio",
+  "directories": {
+    "output": "release",
+    "buildResources": "build-assets"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*",
+    "package.json",
+    "node_modules/**/*"
+  ],
+  "asar": true,
+  "asarUnpack": [
+    "**/@ffmpeg-installer/**",
+    "**/@ffprobe-installer/**"
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "appx",
+        "arch": ["x64"]
+      },
+      {
+        "target": "nsis",
+        "arch": ["x64"]
+      }
+    ],
+    "icon": "build-assets/icon.ico"
+  },
+  "appx": {
+    "artifactName": "${productName}-${version}.msix",
+    "identityName": "chandruyogasekar.Lossless-editor",
+    "publisher": "CN=F779015B-2E5F-45A4-B01F-66A35BEEB77F",
+    "publisherDisplayName": "chandru yogasekar",
+    "applicationId": "LosslessStudioApp",
+    "displayName": "YOUR_RESERVED_DISPLAY_NAME",
+    "backgroundColor": "#0b0e14",
+    "showNameOnTiles": true,
+    "addAutoLaunchExtension": false,
+    "languages": ["en-US"],
+    "minVersion": "10.0.17763.0",
+    "maxVersionTested": "10.0.22621.0"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true
+  }
+}
